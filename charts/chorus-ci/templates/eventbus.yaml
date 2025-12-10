@@ -8,6 +8,9 @@ metadata:
 spec:
   jetstream:
     version: {{ .Values.eventBus.jetstream.version }}
+    replicas: 1
     {{- if .Values.eventBus.debug }}
     startArgs: ["-D"]
     {{- end }}
+    streamConfig: |
+      replicas: 1
