@@ -15,7 +15,7 @@ sensor:
     secretName: regcred
 
 global:
-  imageDomain: "harbor.build.chorus-tre.ch"
+  imageDomain: "harbor.build.192.168.120.181.nip.io"
   imageNamespace: "docker_proxy/library"
 
 # Default workflow settings

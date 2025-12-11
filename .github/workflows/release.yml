@@ -27,7 +27,7 @@ jobs:
       - name: Run chart-releaser
         uses: bitdeps/helm-oci-charts-releaser@v0.1.4
         with:
-          oci_registry: oci://harbor.build.chorus-tre.ch/charts
+          oci_registry: oci://harbor.build.192.168.120.181.nip.io/charts
           oci_username: "robot\\$charts+chorus-tre"
           oci_password: ${{ secrets.HARBOR_ROBOT_PASSWORD }}
           github_token: ${{ secrets.GITHUB_TOKEN }}

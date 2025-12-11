@@ -38,7 +38,7 @@ argo-cd:
       # See: https://argo-cd.readthedocs.io/en/stable/operator-manual/user-management/keycloak/
       oidc.config: |
         name: Keycloak
-        issuer: https://auth.build.chorus-tre.ch/realms/build
+        issuer: https://auth.build.192.168.120.181.nip.io/realms/build
         clientId: argocd
         clientSecret: $oidc.keycloak.clientSecret
         requestedScopes: [openid, profile, email, groups]
@@ -62,14 +62,14 @@ argo-workflows:
 
     sso:
       enabled: true
-      issuer: https://auth.build.chorus-tre.ch/realms/build
+      issuer: https://auth.build.192.168.120.181.nip.io/realms/build
       clientId:
         name: secretName
         key: clientId
       clientSecret:
         name: secretName
         key: clientSecret
-      redirectUrl: https://argo-workflows.build.chorus-tre.ch/oauth2/callback
+      redirectUrl: https://argo-workflows.build.192.168.120.181.nip.io/oauth2/callback
       rbac:
         enabled: true
       scopes: [openid, profile, email, groups]
@@ -119,9 +119,9 @@ grafana:
       email_attribute_path: email
       login_attribute_path: username
       name_attribute_path: full_name
-      auth_url: https://auth.build.chorus-tre.ch/realms/build/protocol/openid-connect/auth?kc_idp_hint=google
-      token_url: https://auth.build.chorus-tre.ch/realms/build/protocol/openid-connect/token
-      api_url: https://auth.build.chorus-tre.ch/realms/build/protocol/openid-connect/userinfo
+      auth_url: https://auth.build.192.168.120.181.nip.io/realms/build/protocol/openid-connect/auth?kc_idp_hint=google
+      token_url: https://auth.build.192.168.120.181.nip.io/realms/build/protocol/openid-connect/token
+      api_url: https://auth.build.192.168.120.181.nip.io/realms/build/protocol/openid-connect/userinfo
       role_attribute_path: contains(roles[*], 'admin') && 'Admin' || contains(roles[*], 'editor') && 'Editor' || 'Viewer'
       allow_assign_grafana_admin: true
 ```

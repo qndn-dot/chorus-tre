@@ -86,5 +86,5 @@ spec:
           /repos/{{`{{inputs.parameters.repoFullName}}`}}/statuses/{{`{{inputs.parameters.sha}}`}}
           -f "state=$state"
           -f "description={{`{{workflow.mainEntrypoint}}`}} $verb $status_desc"
-          -f "target_url=https://argo-workflows.build.chorus-tre.ch/workflows/{{`{{workflow.namespace}}`}}/{{`{{workflow.name}}`}}"
+          -f "target_url=https://argo-workflows.build.192.168.120.181.nip.io/workflows/{{`{{workflow.namespace}}`}}/{{`{{workflow.name}}`}}"
           -f "context={{ $name }}"
